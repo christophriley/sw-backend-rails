@@ -4,5 +4,7 @@ Rails.application.routes.draw do
 
   put "/gifts", to: "gifts#add"
 
+  get "/reset", to: "test#reset"
+
   get "up" => "rails/health#show", as: :rails_health_check
 end
