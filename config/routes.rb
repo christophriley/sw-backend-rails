@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get "/wallets", to: "wallets#index"
 
   get "/transactions", to: "transactions#list"
+  put "/transactions", to: "transactions#add"
 
   put "/gifts", to: "gifts#add"
 

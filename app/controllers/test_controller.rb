@@ -1,8 +1,8 @@
 class TestController < ApplicationController
     skip_before_action :verify_authenticity_token
     def reset
-        Wallet.delete_all
         Transaction.delete_all
+        Wallet.delete_all
 
         startingWallets = [
             {walletIdentifier: "8c18b5bf-0171-4918-a611-bde754382f7a", balance: 2500},
