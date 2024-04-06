@@ -12,7 +12,6 @@
 
 ActiveRecord::Schema[7.1].define(version: 2024_04_06_163833) do
   create_table "transactions", force: :cascade do |t|
-    t.integer "balance"
     t.datetime "timestamp", null: false
     t.integer "points", default: 0, null: false
     t.string "spentPoints", default: "0", null: false
