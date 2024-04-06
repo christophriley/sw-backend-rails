@@ -13,10 +13,9 @@
 ActiveRecord::Schema[7.1].define(version: 2024_04_06_163833) do
   create_table "transactions", force: :cascade do |t|
     t.integer "balance"
-    t.datetime "timestamp"
-    t.integer "points"
-    t.string "spentPoints"
-    t.string "integer"
+    t.datetime "timestamp", null: false
+    t.integer "points", default: 0, null: false
+    t.string "spentPoints", default: "0", null: false
     t.integer "creditWallet_id"
     t.integer "debitWallet_id"
     t.datetime "created_at", null: false
@@ -27,7 +26,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_06_163833) do
 
   create_table "wallets", force: :cascade do |t|
     t.string "walletIdentifier", null: false
-    t.integer "balance"
+    t.integer "balance", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["walletIdentifier"], name: "index_wallets_on_walletIdentifier", unique: true
