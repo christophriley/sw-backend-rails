@@ -5,8 +5,8 @@ class CreateTransactions < ActiveRecord::Migration[7.1]
       t.datetime :timestamp, null: false
       t.integer :points, null: false, default: 0
       t.string :spentPoints, null: false, default: 0
-      t.references :creditWallet, null: true, foreign_key: true
-      t.references :debitWallet, null: true, foreign_key: true
+      t.references :creditWallet, null: true, foreign_key: { to_table: :wallets}
+      t.references :debitWallet, null: true, foreign_key: true, foreign_key: { to_table: :wallets}
 
       t.timestamps
     end

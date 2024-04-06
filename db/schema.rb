@@ -32,6 +32,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_06_163833) do
     t.index ["walletIdentifier"], name: "index_wallets_on_walletIdentifier", unique: true
   end
 
-  add_foreign_key "transactions", "creditWallets"
-  add_foreign_key "transactions", "debitWallets"
+  add_foreign_key "transactions", "wallets", column: "creditWallet_id"
+  add_foreign_key "transactions", "wallets", column: "debitWallet_id"
 end
